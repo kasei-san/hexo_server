@@ -10,12 +10,14 @@ Vagrant.configure(2) do |config|
   config.vm.box = "chef/centos-7.0"
   config.vm.define :hexo_server do |hexo_server|
     hexo_server.vm.provision :chef_solo do |chef|
-      chef.cookbooks_path = ['./cookbooks']
+      chef.cookbooks_path = './cookbooks'
       chef.log_level = 'debug'
       chef.add_recipe 'epel_repo'
       chef.add_recipe 'node'
+      chef.add_recipe 'hexo'
     end
   end
   config.cache.scope = :box if Vagrant.has_plugin?("vagrant-cachier")
+  config.vm.synced_folder 'mypage', '/var/www/mypage', create: true
   config.vm.network :private_network, ip: "192.168.33.10"
 end
