@@ -16,4 +16,5 @@ Vagrant.configure(2) do |config|
       chef.add_recipe 'node'
     end
   end
+  config.cache.scope = :box if Vagrant.has_plugin?("vagrant-cachier")
 end
