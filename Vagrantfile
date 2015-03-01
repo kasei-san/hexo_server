@@ -9,5 +9,11 @@ Vagrant.configure(2) do |config|
   config.omnibus.chef_version = :latest
   config.vm.box = "chef/centos-7.0"
   config.vm.define :hexo_server do |hexo_server|
+    hexo_server.vm.provision :chef_solo do |chef|
+      chef.cookbooks_path = ['./cookbooks']
+      chef.log_level = 'debug'
+      chef.add_recipe 'epel_repo'
+      chef.add_recipe 'node'
+    end
   end
 end
