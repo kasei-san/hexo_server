@@ -23,3 +23,9 @@ $ hexo server -i 192.168.33.10
 ```
 
 see http://192.168.33.10:4000/
+
+## File update watch
+
+```sh-sessio
+$ vagrant rsync-auto
+```
