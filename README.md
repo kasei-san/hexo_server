@@ -29,3 +29,11 @@ see http://192.168.33.10:4000/
 ```sh-sessio
 $ vagrant rsync-auto
 ```
+
+## Create new page
+
+```sh-session
+$ vagrant ssh
+$ cd /var/www/mypage/
+$ hexo new #{page_name}
+```
