@@ -1,6 +1,7 @@
 include_recipe 'node'
+
 execute 'hexo install' do
-  command 'npm install hexo-cli -g'
+  command 'npm install -g hexo-cli'
   not_if { File.exists?('/usr/bin/hexo') }
 end
 
