@@ -19,7 +19,11 @@ Vagrant.configure(2) do |config|
     end
   end
   config.cache.scope = :box if Vagrant.has_plugin?("vagrant-cachier")
+
   config.vm.synced_folder 'mypage', '/var/www/mypage',
+    create: true
+
+  config.vm.synced_folder 'source', '/var/www/source',
     create: true,
     type: 'rsync'
 
