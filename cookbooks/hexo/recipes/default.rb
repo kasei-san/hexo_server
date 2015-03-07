@@ -5,12 +5,7 @@ execute 'hexo install' do
   not_if { File.exists?('/usr/bin/hexo') }
 end
 
-# hexo init すると、_config.yml が更新されるので、それがあるときはやらない
-execute 'hexo init' do
+execute 'npm install' do
   cwd '/var/www/mypage'
-  command <<EOS
-hexo init .
-npm install
-EOS
-  not_if { File.exists?('/var/www/mypage/_config.yml') }
+  command 'npm install'
 end
