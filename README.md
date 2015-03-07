@@ -17,9 +17,7 @@ $ rake spec
 ## Run hexo server
 
 ```sh-session
-$ vagrant ssh
-$ cd /var/www/mypage/
-$ hexo server -i 192.168.33.10
+$ vagrant ssh -c "cd /var/www/mypage/; hexo server -i 192.168.33.10"
 ```
 
 see http://192.168.33.10:4000/
