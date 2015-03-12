@@ -20,7 +20,7 @@ Vagrant.configure(2) do |config|
   end
   config.cache.scope = :box if Vagrant.has_plugin?("vagrant-cachier")
 
-  config.vm.synced_folder 'mypage', '/var/www/mypage',
+  config.vm.synced_folder 'myblog', '/var/www/myblog',
     create: true
 
   config.vm.synced_folder 'source', '/var/www/source',
