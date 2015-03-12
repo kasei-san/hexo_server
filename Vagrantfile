@@ -12,6 +12,7 @@ Vagrant.configure(2) do |config|
     hexo_server.vm.provision :chef_solo do |chef|
       chef.cookbooks_path = './cookbooks'
       chef.log_level = 'debug'
+      chef.add_recipe 'git'
       chef.add_recipe 'jst'
       chef.add_recipe 'epel_repo'
       chef.add_recipe 'node'
@@ -28,4 +29,5 @@ Vagrant.configure(2) do |config|
     type: 'rsync'
 
   config.vm.network :private_network, ip: "192.168.33.10"
+  config.ssh.forward_agent = true
 end
