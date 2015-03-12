@@ -6,6 +6,6 @@ execute 'hexo install' do
 end
 
 execute 'npm install' do
-  cwd '/var/www/mypage'
+  cwd '/var/www/myblog'
   command 'npm install'
 end

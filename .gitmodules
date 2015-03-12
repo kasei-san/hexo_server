@@ -1,0 +1,3 @@
+[submodule "myblog"]
+	path = myblog
+	url = git@github.com:kasei-san/myblog.git
