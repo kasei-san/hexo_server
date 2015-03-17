@@ -16,8 +16,9 @@ $ rake spec
 
 ## Run hexo server
 
+nohup だと上手く起動しない...
 ```sh-session
-$ vagrant ssh -c "cd /var/www/myblog/; hexo clean; hexo server -i 192.168.33.10"
+$ vagrant ssh -c "cd /var/www/myblog/ && hexo clean && hexo server -i 192.168.33.10"
 ```
 
 see http://192.168.33.10:4000/
@@ -25,7 +26,7 @@ see http://192.168.33.10:4000/
 ## File update watch
 
 ```sh-sessio
-$ vagrant rsync-auto
+$ vagrant rsync-auto &
 ```
 
 ## Create new page
@@ -35,3 +36,12 @@ $ vagrant ssh
 $ cd /var/www/myblog/
 $ hexo new #{page_name}
 ```
+
+## Deploy
+
+```sh-session
+$ vagrant ssh -c "cd /var/www/myblog/ && hexo clean && hexo deploy"
+```
+
+see: http://kasei-san.github.io/myblog/
+
