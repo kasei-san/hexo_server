@@ -5,6 +5,8 @@ hexo server on vagrant
 
 ```sh-session
 $ bundle install --path vendor/bundle --binstubs
+$ git submodule init
+$ git submodule update
 $ vagrant up
 ```
 
