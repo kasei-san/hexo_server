@@ -50,7 +50,7 @@ see: http://kasei-san.github.io/myblog/
 ## Update submodule
 
 ```sh-session
-$ submodule foreach git pull origin master
+$ git submodule foreach git pull origin master
 ```
 
 ## Edit remote files
