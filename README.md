@@ -47,3 +47,9 @@ $ vagrant ssh -c "cd /var/www/myblog/ && hexo clean && hexo deploy"
 
 see: http://kasei-san.github.io/myblog/
 
+## Update submodule
+
+```sh-session
+$ submodule foreach git pull origin master
+```
+
