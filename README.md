@@ -53,3 +53,9 @@ see: http://kasei-san.github.io/myblog/
 $ submodule foreach git pull origin master
 ```
 
+## Edit remote files
+
+```sh-session
+$ vagrant ssh-config >> ~/.ssh/config
+$ scp://vagrant@hexo_server//var/www/myblog/source/_posts/20150307-upload-github-pages.md
+```
