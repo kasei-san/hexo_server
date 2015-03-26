@@ -34,15 +34,13 @@ $ vagrant rsync-auto &
 ## Create new page
 
 ```sh-session
-$ vagrant ssh
-$ cd /var/www/myblog/
-$ hexo new #{page_name}
+$ vagrant ssh -c "cd /var/www/myblog/; hexo new ${page_name}
 ```
 
 ## Deploy
 
 ```sh-session
-$ vagrant ssh -c "cd /var/www/myblog/ && hexo clean && hexo deploy"
+$ vagrant ssh -c "cd /var/www/myblog/ && hexo clean && hexo deploy -g"
 ```
 
 see: http://kasei-san.github.io/myblog/
@@ -51,6 +49,7 @@ see: http://kasei-san.github.io/myblog/
 
 ```sh-session
 $ git submodule foreach git pull origin master
+$ git submodule update
 ```
 
 ## Edit remote files
