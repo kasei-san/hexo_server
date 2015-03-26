@@ -24,10 +24,6 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder 'myblog', '/var/www/myblog',
     create: true
 
-  config.vm.synced_folder 'source', '/var/www/source',
-    create: true,
-    type: 'rsync'
-
   config.vm.network :private_network, ip: "192.168.33.10"
   config.ssh.forward_agent = true
 end
